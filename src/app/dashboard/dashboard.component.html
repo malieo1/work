@@ -1,0 +1,20 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Administartion</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="blehi">
+      <p >Tableaux des employées</p> 
+      <p style="width:20% ; margin-left: 40px; margin-bottom: 60px; " class="input-group no-border">
+       <input type="text" value=""  class="form-control" placeholder="recherche..." > 
+       <button mat-button type="submit" class="btn btn-round btn-just-icon">
+        <mat-icon>search</mat-icon>
+        <div class="ripple-container"></div>
+       </button>
+      </p>
+      <p>
+        <button mat-button type="submit" class="btn btn-outline-success" >Ajout</button>
+      </p>
+    </div>
+    <app-tableemployee></app-tableemployee>
+  </div>
+</div>
+

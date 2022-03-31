@@ -1,0 +1,94 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+      <td mat-cell *matCellDef="let row">{{row.nom}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="prenom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</th>
+      <td mat-cell *matCellDef="let row">{{row.prenom}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="occupation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Occupation</th>
+      <td mat-cell *matCellDef="let row">{{row.occupation}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="grade">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>grade</th>
+      <td mat-cell *matCellDef="let row">{{row.grade}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell  *matHeaderCellDef > Actions </th>
+      <td mat-cell *matCellDef="let row" >
+           <button type="button" class="btn btn-outline-success btn-sm mb-2 "(click)="openModal()" >Mise à jour</button>
+           &nbsp;
+           <button class="btn btn-outline-info btn-sm mb-2 " >information</button>
+           &nbsp;
+           <button class="btn btn-outline-danger btn-sm mb-2 " >supprimer</button>
+          </td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
+
+
+<div class="modal show" id="exampleModal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mise à jour</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <h6>Nom</h6>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="le nom de l'employée">
+          </div>
+          <div class="form-group">
+            <h6>prenom</h6>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="prenom de l'employée">
+          </div>
+          <div class="form-group">
+            <h6>id</h6>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id">
+          </div>
+          <div class="form-group">
+            <h6>address mail</h6>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-dark mb-2"  (click)="onCloseHandled()">Close</button>
+        <button class="btn btn-outline-primary mb-2">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
