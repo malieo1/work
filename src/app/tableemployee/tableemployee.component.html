@@ -37,11 +37,17 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell  *matHeaderCellDef > Actions </th>
       <td mat-cell *matCellDef="let row" >
-           <button type="button" class="btn btn-outline-success btn-sm mb-2 "(click)="openModal()" >Mise à jour</button>
+           <button type="button" class="btn btn-outline-success btn-sm mb-2 "(click)="openModal()"  tooltip="Tooltip on top" placement="top" >
+            <mat-icon>note_add</mat-icon>
+           </button>
            &nbsp;
-           <button class="btn btn-outline-info btn-sm mb-2 " >information</button>
+           <button class="btn btn-outline-info btn-sm mb-2 "  title="plus d'information" >
+             <mat-icon>info</mat-icon> 
+            </button>
            &nbsp;
-           <button class="btn btn-outline-danger btn-sm mb-2 " >supprimer</button>
+           <button class="btn btn-outline-danger btn-sm mb-2 "  title="supprimer" >
+            <mat-icon>clear</mat-icon>
+           </button>
           </td>
 
     </ng-container>

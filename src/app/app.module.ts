@@ -24,6 +24,9 @@ import { GroupesComponent } from './groupes/groupes.component';
 import { StructureComponent } from './structure/structure.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FajoutComponent } from './fajout/fajout.component';
+import {MatCardModule} from '@angular/material/card';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 
 
@@ -40,6 +43,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     TablegroupeComponent,
     GroupesComponent,
     StructureComponent,
+    FajoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatFormFieldModule,
     MatExpansionModule,
     MatCheckboxModule,
+    MatCardModule,
+    TooltipModule
 
 
 

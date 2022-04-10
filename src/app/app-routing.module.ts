@@ -1,3 +1,4 @@
+import { FajoutComponent } from './fajout/fajout.component';
 import { StructureComponent } from './structure/structure.component';
 import { GroupesComponent } from './groupes/groupes.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'groupes', component: GroupesComponent },
   { path: 'structure', component: StructureComponent},
+  { path: 'Ajout', component: FajoutComponent},
 ];
 
 @NgModule({
